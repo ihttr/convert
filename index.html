@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal File Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-exchange-alt"></i> Universal File Converter</h1>
+            <p>Convert between PDF, Word, PowerPoint and more with just a few clicks</p>
+        </header>
+
+        <main>
+            <div class="converter-box">
+                <div class="conversion-controls">
+                    <div class="input-section">
+                        <h3>Input File</h3>
+                        <div class="file-drop-area" id="dropArea">
+                            <span class="file-msg"><i class="fas fa-cloud-upload-alt"></i> Drag & drop files here or click to browse</span>
+                            <input type="file" id="fileInput" class="file-input">
+                        </div>
+                        <div class="format-selector">
+                            <label for="inputFormat">From:</label>
+                            <select id="inputFormat">
+                                <option value="auto">Detect automatically</option>
+                                <option value="pdf">PDF (.pdf)</option>
+                                <option value="docx">Word (.docx)</option>
+                                <option value="pptx">PowerPoint (.pptx)</option>
+                                <option value="txt">Plain Text (.txt)</option>
+                                <option value="rtf">Rich Text (.rtf)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="conversion-direction">
+                        <button id="swapBtn" aria-label="Swap conversion direction"><i class="fas fa-exchange-alt"></i></button>
+                    </div>
+
+                    <div class="output-section">
+                        <h3>Output Format</h3>
+                        <div class="format-selector">
+                            <label for="outputFormat">To:</label>
+                            <select id="outputFormat">
+                                <option value="pdf">PDF (.pdf)</option>
+                                <option value="docx">Word (.docx)</option>
+                                <option value="pptx">PowerPoint (.pptx)</option>
+                                <option value="txt">Plain Text (.txt)</option>
+                                <option value="rtf">Rich Text (.rtf)</option>
+                            </select>
+                        </div>
+                        <div class="output-options hidden" id="outputOptions">
+                            <!-- Options will appear here based on format -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="convertBtn" disabled>Convert File</button>
+                    <button id="downloadBtn" disabled class="hidden">Download Converted File</button>
+                </div>
+
+                <div class="progress-container hidden" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+            </div>
+
+            <div class="file-info hidden" id="fileInfo">
+                <h3>Selected File</h3>
+                <div class="file-details">
+                    <span id="fileName"></span>
+                    <span id="fileSize"></span>
+                </div>
+            </div>
+        </main>
+
+        <section class="features">
+            <h2>Why Choose Our Converter?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure</h3>
+                    <p>Files are processed in your browser and never uploaded to our servers.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast</h3>
+                    <p>Quick conversions without waiting in queues or dealing with slow servers.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Powerful</h3>
+                    <p>Supports all major document formats with high quality conversions.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive</h3>
+                    <p>Works perfectly on all devices from desktop to mobile.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2023 Universal File Converter. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

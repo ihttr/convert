@@ -1,0 +1,333 @@
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #6c5ce7;
+    --dark-color: #2d3436;
+    --light-color: #f5f6fa;
+    --success-color: #00b894;
+    --warning-color: #fdcb6e;
+    --error-color: #d63031;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.converter-box {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.conversion-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.input-section, .output-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.file-drop-area {
+    border: 2px dashed #ccc;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.file-drop-area:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(74, 107, 255, 0.05);
+}
+
+.file-drop-area.highlight {
+    border-color: var(--success-color);
+    background-color: rgba(0, 184, 148, 0.05);
+}
+
+.file-msg {
+    display: block;
+    color: #666;
+    font-size: 1rem;
+}
+
+.file-msg i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--primary-color);
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.format-selector {
+    margin-bottom: 20px;
+}
+
+.format-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.format-selector select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    background-color: white;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.format-selector select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 107, 255, 0.2);
+}
+
+.conversion-direction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+#swapBtn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#swapBtn:hover {
+    background-color: var(--secondary-color);
+    transform: rotate(180deg);
+}
+
+.output-options {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+}
+
+.output-options label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    flex: 1;
+}
+
+#convertBtn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#convertBtn:hover {
+    background-color: var(--secondary-color);
+}
+
+#convertBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#downloadBtn {
+    background-color: var(--success-color);
+    color: white;
+}
+
+#downloadBtn:hover {
+    background-color: #00a884;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.file-info {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.file-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-container {
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    border-radius: var(--border-radius);
+    padding: 3px;
+}
+
+.progress-bar {
+    height: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.features {
+    margin-bottom: 40px;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .conversion-controls {
+        flex-direction: column;
+    }
+    
+    .conversion-direction {
+        padding: 20px 0;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
